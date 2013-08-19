@@ -56,7 +56,7 @@ Not quite your traditional "Hello, World" program… but then again, I always th
 
 Save the above script to a location under your Web server document root, with a .php extension, and browse to it. You'll see something like this:
 
-IMAGE
+![First example](http://alemohamad.com/github/lesson1.01.png)
 
 Look at the HTML source:
 
@@ -71,7 +71,7 @@ Neo: I am Neo, but my people call me The One.
 </html>
 ```
 
-What just happened? When you requested the script above, Apache intercepted your request and handed it off to PHP. PHP then parsed the script, executing the code between the ```php <?php...?> ``` marks and replacing it with the output of the code run. The result was then handed back to the server and transmitted to the client. Since the output contained valid HTML, the browser was able to render it for display to the user.
+What just happened? When you requested the script above, Apache intercepted your request and handed it off to PHP. PHP then parsed the script, executing the code between the ```<?php...?>``` marks and replacing it with the output of the code run. The result was then handed back to the server and transmitted to the client. Since the output contained valid HTML, the browser was able to render it for display to the user.
 
 A close look at the script will reveal the basic syntactical rules of PHP. Every PHP statement ends in a semi-colon. This convention is identical to that used in Perl, and omitting the semi-colon is one of the most common mistakes newbies make. That said, it is interesting to note that a semi-colon is *not* needed to terminate the *last* line of a PHP block. The PHP closing tag includes a semi-colon, therefore the following is perfectly valid PHP code:
 
@@ -99,11 +99,11 @@ Blank lines within the PHP tags are ignored by the parser. Everything outside th
 
 Variables are the bread and butter of every programming language... and PHP has them too. A variable can be thought of as a programming construct used to store both numeric and non-numeric data; the contents of a variable can be altered during program execution. Finally, variables can be compared with each other, and you – the programmer – can write code that performs specific actions on the basis of this comparison.
 
-PHP supports a number of different variable types: integers, floating point numbers, strings and arrays. In many languages, it's essential to specify the variable type before using it: for example, a variable may need to be specified as type ```php integer``` or type ```php array```. Give PHP credit for a little intelligence, though: it automagically determines variable type by the context in which it is being used!
+PHP supports a number of different variable types: integers, floating point numbers, strings and arrays. In many languages, it's essential to specify the variable type before using it: for example, a variable may need to be specified as type ```integer``` or type ```array```. Give PHP credit for a little intelligence, though: it automagically determines variable type by the context in which it is being used!
 
-Every variable has a name. In PHP, a variable name is preceded by a dollar ($) symbol and must begin with a letter or underscore, optionally followed by more letters, numbers and/or underscores. For example, ```php $popeye```, ```php $one``` and ```php $INCOME``` are all valid PHP variable names, while ```php $123``` and ```php $48hrs``` are invalid.
+Every variable has a name. In PHP, a variable name is preceded by a dollar ($) symbol and must begin with a letter or underscore, optionally followed by more letters, numbers and/or underscores. For example, ```$popeye```, ```$one``` and ```$INCOME``` are all valid PHP variable names, while ```$123``` and ```$48hrs``` are invalid.
 
-Note that variable names in PHP are case sensitive, so ```php $me``` is different from ```php $Me``` or ```php $ME```.
+Note that variable names in PHP are case sensitive, so ```$me``` is different from ```$Me``` or ```$ME```.
 
 Here's a simple example that demonstrates PHP's variables:
 
@@ -125,7 +125,7 @@ echo "Neo: I am <b>$name</b>, the <b>$rank</b>. You can call me by my serial num
 </html>
 ```
 
-Here, the variables ```php $name```, $rank and $serialNumber are first defined with string and numeric values, and then substituted in the echo() function call. The echo() function, along with the print() function, is commonly used to print data to the standard output device (here, the browser). Notice that I've included HTML tags within the call to echo(), and those have been rendered by the browser in its output. You can do this too. Really.
+Here, the variables ```$name```, $rank and $serialNumber are first defined with string and numeric values, and then substituted in the echo() function call. The echo() function, along with the print() function, is commonly used to print data to the standard output device (here, the browser). Notice that I've included HTML tags within the call to echo(), and those have been rendered by the browser in its output. You can do this too. Really.
 
 ## An Equal Music
 
