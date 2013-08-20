@@ -4,7 +4,7 @@
 
 If you're new to Web development, you could be forgiven for thinking that it consists of no more than a mass of acronyms, each one more indecipherable than the last. ASP, CGI, SOAP, XML, HTTP - the list seems never-ending, and the sheer volume of information on each of these can discourage the most avid programmer. But before you put on your running shoes and flee, there's a little secret you should know. To put together a cutting-edge Web site, chock full of all the latest bells and whistles, there's only one acronym you really need to know:
 
-PHP
+**PHP**
 
 Now, while you have almost certainly *heard* of PHP, you may not be aware of just how powerful the language is, and how much it can do for you. Today, PHP has the enviable position of being the only open-source server-side scripting language that's both fun and easy to learn. This is not just advertising: recent surveys show that more than 16,000,000 Web sites use PHP as a server side scripting language, and the language also tops the list of most popular Apache modules.
 
@@ -40,15 +40,15 @@ Here's a simple example that demonstrates how PHP and HTML can be combined:
 
 ```php
 <html>
-<head></head>
-<body>
-Agent: So who do you think you are, anyhow?
-<br />
-<?php
-// print output
-echo 'Neo: I am Neo, but my people call me The One.';
-?>
-</body>
+    <head></head>
+    <body>
+        Agent: So who do you think you are, anyhow?
+        <br />
+        <?php
+        // print output
+        echo 'Neo: I am Neo, but my people call me The One.';
+        ?>
+    </body>
 </html>
 ```
 
@@ -62,12 +62,12 @@ Look at the HTML source:
 
 ```php
 <html>
-<head></head>
-<body>
-Agent: So who do you think you are, anyhow?
-<br />
-Neo: I am Neo, but my people call me The One.
-</body>
+    <head></head>
+    <body>
+        Agent: So who do you think you are, anyhow?
+        <br />
+        Neo: I am Neo, but my people call me The One.
+    </body>
 </html>
 ```
 
@@ -109,19 +109,19 @@ Here's a simple example that demonstrates PHP's variables:
 
 ```php
 <html>
-<head></head>
-<body>
-Agent: So who do you think you are, anyhow?
-<br />
-<?php
-// define variables
-$name = 'Neo';
-$rank = 'Anomaly';
-$serialNumber = 1;
-// print output
-echo "Neo: I am <b>$name</b>, the <b>$rank</b>. You can call me by my serial number, <b>$serialNumber</b>.";
-?>
-</body>
+    <head></head>
+    <body>
+        Agent: So who do you think you are, anyhow?
+        <br />
+        <?php
+        // define variables
+        $name = 'Neo';
+        $rank = 'Anomaly';
+        $serialNumber = 1;
+        // print output
+        echo "Neo: I am <b>$name</b>, the <b>$rank</b>. You can call me by my serial number, <b>$serialNumber</b>.";
+        ?>
+    </body>
 </html>
 ```
 
@@ -203,38 +203,37 @@ A good way to get familiar with operators is to use them to perform arithmetic o
 
 ```php
 <html>
-<head>
-</head>
-<body>
-<?php
-// set quantity
-$quantity = 1000;
-// set original and current unit price
-$origPrice = 100;
-$currPrice = 25;
-// calculate difference in price
-$diffPrice = $currPrice - $origPrice;
-// calculate percentage change in price
-$diffPricePercent = (($currPrice - $origPrice) * 100)/$origPrice
-?>
+    <head></head>
+    <body>
+        <?php
+        // set quantity
+        $quantity = 1000;
+        // set original and current unit price
+        $origPrice = 100;
+        $currPrice = 25;
+        // calculate difference in price
+        $diffPrice = $currPrice - $origPrice;
+        // calculate percentage change in price
+        $diffPricePercent = (($currPrice - $origPrice) * 100)/$origPrice
+        ?>
 
-<table border="1" cellpadding="5" cellspacing="0">
-<tr>
-<td>Quantity</td>
-<td>Cost price</td>
-<td>Current price</td>
-<td>Absolute change in price</td>
-<td>Percent change in price</td>
-</tr>
-<tr>
-<td><?php echo $quantity ?></td>
-<td><?php echo $origPrice ?></td>
-<td><?php echo $currPrice ?></td>
-<td><?php echo $diffPrice ?></td>
-<td><?php echo $diffPricePercent ?>%</td>
-</tr>
-</table>
-</body>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <td>Quantity</td>
+                <td>Cost price</td>
+                <td>Current price</td>
+                <td>Absolute change in price</td>
+                <td>Percent change in price</td>
+            </tr>
+            <tr>
+                <td><?php echo $quantity ?></td>
+                <td><?php echo $origPrice ?></td>
+                <td><?php echo $currPrice ?></td>
+                <td><?php echo $diffPrice ?></td>
+                <td><?php echo $diffPricePercent ?>%</td>
+            </tr>
+        </table>
+    </body>
 </html>
 ```
 
