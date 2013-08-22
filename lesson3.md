@@ -2,11 +2,11 @@
 
 ## Going Deeper
 
-If you’ve been paying attention, you remember that in [Part Two](http://devzone.zend.com/5/php-101-part-2-calling-all-operators/) I gave you a quick crash course in PHP’s basic control structures and operators. I also showed you how PHP can be used to process the data entered into a Web form. In this tutorial, I’m going to delve deeper into PHP’s operators and control structures, showing you two new operators, an alternative to the ```if-else()``` family of conditional statements, and some of PHP’s more interesting loops. So keep reading... this is just about to get interesting!
+If you've been paying attention, you remember that in [Part Two](http://devzone.zend.com/5/php-101-part-2-calling-all-operators/) I gave you a quick crash course in PHP's basic control structures and operators. I also showed you how PHP can be used to process the data entered into a Web form. In this tutorial, I'm going to delve deeper into PHP's operators and control structures, showing you two new operators, an alternative to the ```if-else()``` family of conditional statements, and some of PHP's more interesting loops. So keep reading... this is just about to get interesting!
 
 ## Switching Things Around
 
-An alternative to the ```if-else()``` family of control structures is PHP’s ```switch-case()``` statement, which does almost the same thing. It looks like this:
+An alternative to the ```if-else()``` family of control structures is PHP's ```switch-case()``` statement, which does almost the same thing. It looks like this:
 
 ```php
 switch (decision-variable) {
@@ -20,7 +20,7 @@ switch (decision-variable) {
 
 Depending on the value of the decision variable, the appropriate ```case()``` block is executed. A ```default``` block can also be created, to handle all those occasions when the value of the decision variable does not match any of the listed ```case()``` conditions.
 
-I’ll make this a little clearer by re-writing one of my earlier examples in terms of the ```switch()``` statement:
+I'll make this a little clearer by re-writing one of my earlier examples in terms of the ```switch()``` statement:
 
 ```php
 <html>
@@ -66,7 +66,7 @@ Normally, when creating and processing forms in PHP, you would place the HTML fo
 
 How do you do this? Simple. All you need to do is assign a name to the form ```submit``` control, and then check whether the special ```$_POST``` container variable contains that name when the script first loads up. If it does, the form has already been submitted, and you can process the data; if it does not, that the user has not submitted the form and you therefore need to generate the initial, unfilled form. Thus, by testing for the presence or absence of this ```submit``` variable, a clever PHP programmer can use a single PHP script to generate both the initial form, and the output after it has been submitted, as appropriate.
 
-Here’s a simple example:
+Here's a simple example:
 
 ```php
 <html>
@@ -96,9 +96,9 @@ Here’s a simple example:
 </html>
 ```
 
-As you can see, the script contains two pages: the initial, empty form and the result page generated after hitting the ```submit``` button. In order to decide which page to display, the script first tests for the presence of the ```$_POST['submit']``` variable. If it doesn’t find it, it assumes that the form has yet to be submitted, and displays the initial list of days. Once the form has been submitted, the same script will be called to process the form input. This time, however, the ```$_POST['submit']``` variable *will* be set, and so PHP will not display the initial page, but rather the page containing the result message.
+As you can see, the script contains two pages: the initial, empty form and the result page generated after hitting the ```submit``` button. In order to decide which page to display, the script first tests for the presence of the ```$_POST['submit']``` variable. If it doesn't find it, it assumes that the form has yet to be submitted, and displays the initial list of days. Once the form has been submitted, the same script will be called to process the form input. This time, however, the ```$_POST['submit']``` variable *will* be set, and so PHP will not display the initial page, but rather the page containing the result message.
 
-Note that for this to work, your ```submit``` button must have a value assigned to its “name” attribute, and you must check for that value in the primary conditional statement. And in case you were wondering, the ```$_SERVER``` array is a special PHP variable which always holds server information, including the path and name of the currently executing script.
+Note that for this to work, your ```submit``` button must have a value assigned to its "name" attribute, and you must check for that value in the primary conditional statement. And in case you were wondering, the ```$_SERVER``` array is a special PHP variable which always holds server information, including the path and name of the currently executing script.
 
 Next up, loops.
 
@@ -106,9 +106,9 @@ Next up, loops.
 
 For those of you unfamiliar with the term, a loop is a control structure that enables you to repeat the same set of php statements or commands over and over again (the actual number of repetitions can be a number you specify, or depend on the fulfillment of one or more conditions).
 
-Now, last time out you saw a few comparison and logical operators, which help in building conditional statements. Since this segment of the tutorial is going to focus on loops, this is an appropriate time to introduce you to PHP’s auto-increment and auto-decrement operators, which see a lot of use in this context.
+Now, last time out you saw a few comparison and logical operators, which help in building conditional statements. Since this segment of the tutorial is going to focus on loops, this is an appropriate time to introduce you to PHP's auto-increment and auto-decrement operators, which see a lot of use in this context.
 
-The auto-increment operator is a PHP operator designed to automatically increment the value of the variable it is attached to by 1. It is represented by two “plus” signs (++). This snippet of code should explain it:
+The auto-increment operator is a PHP operator designed to automatically increment the value of the variable it is attached to by 1. It is represented by two "plus" signs (++). This snippet of code should explain it:
 
 ```php
 <?php
@@ -123,7 +123,7 @@ echo $total;
 
 Thus, ```$total++``` is functionally equivalent to ```$total = $total + 1```.
 
-There’s a corresponding auto-decrement operator (–), which does exactly the opposite:
+There's a corresponding auto-decrement operator (–), which does exactly the opposite:
 
 ```php
 <?php
@@ -150,7 +150,7 @@ while (condition is true) {
 
 In this case, so long as the condition specified evaluates as true - remember what you learned in [Part Two](http://devzone.zend.com/5/php-101-part-2-calling-all-operators/)? - the PHP statements within the curly braces will continue to execute. As soon as the condition becomes false, the loop will be broken and the statements following it will be executed.
 
-Here’s a quick example which demonstrates the ```while()``` loop:
+Here's a quick example which demonstrates the ```while()``` loop:
 
 ```php
 <html>
@@ -190,9 +190,9 @@ This script uses a ```while()``` loop to count forwards from 1 until the values 
 
 ## Loop First, Ask Questions Later
 
-The ```while()``` loop executes a set of statements while a specified condition is true. But what happens if the condition is true on the first iteration of the loop itself? In the previous example, if you were to enter the value 0in the form, the ```while()``` loop would not execute even once. Try it yourself and you’ll see what I mean.
+The ```while()``` loop executes a set of statements while a specified condition is true. But what happens if the condition is true on the first iteration of the loop itself? In the previous example, if you were to enter the value 0in the form, the ```while()``` loop would not execute even once. Try it yourself and you'll see what I mean.
 
-If you’re in a situation where you need to execute a set of statements *at least* once, PHP offers you the ```do-while()``` loop. Here’s what it looks like:
+If you're in a situation where you need to execute a set of statements *at least* once, PHP offers you the ```do-while()``` loop. Here's what it looks like:
 
 ```php
 do {
@@ -200,7 +200,7 @@ do {
 } while (condition is true)
 ```
 
-Let’s take a quick example to better understand the difference between ```while()``` and ```do-while()```:
+Let's take a quick example to better understand the difference between ```while()``` and ```do-while()```:
 
 ```php
 <?php
@@ -228,7 +228,7 @@ do {
 
 You would see *one* line of output, as the code within the ```do()``` block would run once.
 
-Let’s now revise the previous PHP script so that it runs at least once, regardless of what value is entered into the form:
+Let's now revise the previous PHP script so that it runs at least once, regardless of what value is entered into the form:
 
 ```php
 <html>
@@ -266,9 +266,9 @@ for (initial value of counter; condition; new value of counter) {
 }
 ```
 
-Looks like gibberish? Well, hang in there for a minute... the “counter” here is a PHP variable that is initialized to a numeric value, and keeps track of the number of times the loop is executed. Before each execution of the loop, the “condition” is tested. If it evaluates to true, the loop will execute once more and the counter will be appropriately incremented; if it evaluates to false, the loop will be broken and the lines following it will be executed instead.
+Looks like gibberish? Well, hang in there for a minute... the "counter" here is a PHP variable that is initialized to a numeric value, and keeps track of the number of times the loop is executed. Before each execution of the loop, the "condition" is tested. If it evaluates to true, the loop will execute once more and the counter will be appropriately incremented; if it evaluates to false, the loop will be broken and the lines following it will be executed instead.
 
-Here’s a simple example that demonstrates how this loop can be used:
+Here's a simple example that demonstrates how this loop can be used:
 
 ```php
 <html>
@@ -286,9 +286,9 @@ Here’s a simple example that demonstrates how this loop can be used:
 </html>
 ```
 
-The first thing I’ve done here is define the number to be used for the multiplication table. I’ve used 13 here – for no reason other than that it rhymes with “green”.
+The first thing I've done here is define the number to be used for the multiplication table. I've used 13 here – for no reason other than that it rhymes with "green".
 
-Next, I’ve constructed a ```for()``` loop with $x as the counter variable, initialized it to 1. and specified that the loop should run no more than 10 times. The auto-increment operator (discussed earlier) automatically increments the counter by 1 every time the loop is executed. Within the loop, the counter is multiplied by the number, to create the multiplication table, and ```echo()``` is used to display the result on the page.
+Next, I've constructed a ```for()``` loop with $x as the counter variable, initialized it to 1. and specified that the loop should run no more than 10 times. The auto-increment operator (discussed earlier) automatically increments the counter by 1 every time the loop is executed. Within the loop, the counter is multiplied by the number, to create the multiplication table, and ```echo()``` is used to display the result on the page.
 
 ## Turning the Tables
 
@@ -323,8 +323,8 @@ As you just saw, a ```for()``` loop is a very interesting – and useful – pro
 </html>
 ```
 
-As you’ll see if you try coding the same thing by hand, PHP’s ```for()``` loop just saved you a whole lot of work! And it looks good too – take a look at the source code of the dynamically generated table, and you’ll see that it’s nicely formatted, with line breaks at the end of every table cell and row. This magic is accomplished by forcing a carriage return with in every call to ```echo()```.
+As you'll see if you try coding the same thing by hand, PHP's ```for()``` loop just saved you a whole lot of work! And it looks good too – take a look at the source code of the dynamically generated table, and you'll see that it's nicely formatted, with line breaks at the end of every table cell and row. This magic is accomplished by forcing a carriage return with in every call to ```echo()```.
 
 For more examples of the ```for()``` loop in action, visit [http://www.php.net/manual/en/control-structures.for.php](http://www.php.net/manual/en/control-structures.for.php).
 
-Loops are frequently used in combination with one of PHP’s more complex data types, the animal known as the array. That’s a whole topic in itself, and in fact I’m going to discuss it in detail in the next segment of this tutorial. Then I’m going to show you how arrays, loops and forms all work together to make the creation of complex Web forms as easy as eating pie. All that and more in [Part Four](http://devzone.zend.com/8/php-101-part-4-the-food-factor)!
+Loops are frequently used in combination with one of PHP's more complex data types, the animal known as the array. That's a whole topic in itself, and in fact I'm going to discuss it in detail in the next segment of this tutorial. Then I'm going to show you how arrays, loops and forms all work together to make the creation of complex Web forms as easy as eating pie. All that and more in [Part Four](http://devzone.zend.com/8/php-101-part-4-the-food-factor)!

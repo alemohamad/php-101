@@ -21,7 +21,9 @@ Arrays, PHP array functions, and what it all means.
 Everything you're ever likely to need to know about dealing with external files from a PHP script.
 * [PHP 101 (Lesson 6): Functionally Yours](http://devzone.zend.com/9/php-101-part-6-functionally-yours)  
 All about functions, arguments, passing by reference, globals and scope.
-* [PHP 101 (Lesson 7): The Bear Necessities](http://devzone.zend.com/10/php-101-part-7-the-bear-necessities)  
+* [PHP 101 (Lesson 7, Part 1): The Bear Necessities](http://devzone.zend.com/10/php-101-part-7-the-bear-necessities)  
+A gentle introduction to object oriented programming in PHP 4 and PHP 5.
+* [PHP 101 (Lesson 7, Part 2): The Bear Necessities](http://devzone.zend.com/11/php-101-part-7-the-bear-necessities_part-2/)  
 A gentle introduction to object oriented programming in PHP 4 and PHP 5.
 * [PHP 101 (Lesson 8, Part 1): Databases and Other Animals – Part 1](http://devzone.zend.com/12/php-101-part-8-databases-and-other-animals_part-1)  
 All about connecting to a MySQL database from PHP, using the mysql or mysqli extensions.
