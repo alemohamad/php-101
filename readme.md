@@ -25,29 +25,29 @@ All about functions, arguments, passing by reference, globals and scope.
 A gentle introduction to object oriented programming in PHP 4 and PHP 5.
 * [PHP 101 (Lesson 7, Part 2): The Bear Necessities](http://devzone.zend.com/11/php-101-part-7-the-bear-necessities_part-2/)  
 A gentle introduction to object oriented programming in PHP 4 and PHP 5.
-* [PHP 101 (Lesson 8, Part 1): Databases and Other Animals – Part 1](http://devzone.zend.com/12/php-101-part-8-databases-and-other-animals_part-1)  
+* [PHP 101 (Lesson 8, Part 1): Databases and Other Animals](http://devzone.zend.com/12/php-101-part-8-databases-and-other-animals_part-1)  
 All about connecting to a MySQL database from PHP, using the mysql or mysqli extensions.
-* [PHP 101 (Lesson 8, Part 2): Databases and Other Animals – Part 2](http://devzone.zend.com/13/php-101-part-8-databases-and-other-animals_part-2)  
+* [PHP 101 (Lesson 8, Part 2): Databases and Other Animals](http://devzone.zend.com/13/php-101-part-8-databases-and-other-animals_part-2)  
 All about connecting to a MySQL database from PHP, using the mysql or mysqli extensions.
-* [PHP 101 (Lesson 9, Part 1): SQLite My Fire! - Part 1](http://devzone.zend.com/14/php-101-part-9-sqlite-my-fire_part-1)  
+* [PHP 101 (Lesson 9, Part 1): SQLite My Fire!](http://devzone.zend.com/14/php-101-part-9-sqlite-my-fire_part-1)  
 Introducing another database: SQLite.
-* [PHP 101 (Lesson 9, Part 2): SQLite My Fire! - Part 2](http://devzone.zend.com/15/php-101-part-9-sqlite-my-fire_part-2)  
+* [PHP 101 (Lesson 9, Part 2): SQLite My Fire!](http://devzone.zend.com/15/php-101-part-9-sqlite-my-fire_part-2)  
 Introducing another database: SQLite.
 * [PHP 101 (Lesson 10): A Session In The Cookie Jar](http://devzone.zend.com/16/php-101-part-10-a-session-in-the-cookie-jar)  
 Sessions and cookies - how to keep track of visitors to your site.
 * [PHP 101 (Lesson 11): Sinfully Simple](http://devzone.zend.com/17/php-101-part-11-sinfully-simple)  
 An introduction to PHP’s easiest method for dealing with XML.
-* [PHP 101 (Lesson 12, Part 1): Bugging Out – Part 1](http://devzone.zend.com/18/php-101-part-12-bugging-out_part-1)  
+* [PHP 101 (Lesson 12, Part 1): Bugging Out](http://devzone.zend.com/18/php-101-part-12-bugging-out_part-1)  
 Basic error handling.
-* [PHP 101 (Lesson 12, Part 2): Bugging Out – Part 2](http://devzone.zend.com/19/php-101-part-12-bugging-out_part-2)  
+* [PHP 101 (Lesson 12, Part 2): Bugging Out](http://devzone.zend.com/19/php-101-part-12-bugging-out_part-2)  
 Basic error handling.
-* [PHP 101 (Lesson 13, Part 1): The Trashman Cometh – Part 1](http://devzone.zend.com/20/php-101-part-13-the-trashman-cometh_part-1)  
+* [PHP 101 (Lesson 13, Part 1): The Trashman Cometh](http://devzone.zend.com/20/php-101-part-13-the-trashman-cometh_part-1)  
 A primer in basic security.
-* [PHP 101 (Lesson 13, Part 2): The Trashman Cometh – Part 2](http://devzone.zend.com/21/php-101-part-13-the-trashman-cometh_part-2)  
+* [PHP 101 (Lesson 13, Part 2): The Trashman Cometh](http://devzone.zend.com/21/php-101-part-13-the-trashman-cometh_part-2)  
 A primer in basic security.
-* [PHP 101 (Lesson 14, Part 1): Going to the Polls – Part 1](http://devzone.zend.com/22/php-101-part-14-going-to-the-polls_part-1)  
+* [PHP 101 (Lesson 14, Part 1): Going to the Polls](http://devzone.zend.com/22/php-101-part-14-going-to-the-polls_part-1)  
 Putting the pieces together – a first Web application.
-* [PHP 101 (Lesson 14, Part 2): Going to the Polls – Part 2](http://devzone.zend.com/23/php-101-part-14-going-to-the-polls_part-2)  
+* [PHP 101 (Lesson 14, Part 2): Going to the Polls](http://devzone.zend.com/23/php-101-part-14-going-to-the-polls_part-2)  
 Putting the pieces together – a first Web application.
 * [PHP 101 (Lesson 15): No News is Good News](http://devzone.zend.com/24/php-101-part-15-no-news-is-good-news)  
 Creating a simple RSS news aggregator.
