@@ -115,35 +115,35 @@ If you remember what you learned in [Part Eight](http://devzone.zend.com/12/php-
 
 1. The ball starts rolling with the ```sqlite_open()``` function, which accepts the name of the database file as argument and attempts to open it. If this database file cannot be found, an empty database file will be created with the supplied name (assuming the script has write access to the directory).
 
-```php
+    ```php
 <?php
 $db = $_SERVER['DOCUMENT_ROOT'] . "/../library.db";
 $handle = sqlite_open($db) or die("Could not open database");
 ?>
 ```
 
-The database file ```library.db``` needs to be kept somewhere it can't be accessed through the browser by visitors to your site. That means that you need to create it outside your public_html, www or htdocs directory, in a directory that allows your scripts read/write permissions. Web hosting companies generally will offer a space above your web-visible directory where you can do this.
+    The database file ```library.db``` needs to be kept somewhere it can't be accessed through the browser by visitors to your site. That means that you need to create it outside your public_html, www or htdocs directory, in a directory that allows your scripts read/write permissions. Web hosting companies generally will offer a space above your web-visible directory where you can do this.
 
-```$_SERVER['DOCUMENT_ROOT'] . "/.."``` is the directory directly above your web-visible directory.
+    ```$_SERVER['DOCUMENT_ROOT'] . "/.."``` is the directory directly above your web-visible directory.
 
-If successful, the ```sqlite_open()``` function returns a handle to the file, which is stored in the variable $handle and is used for all subsequent communication with the database.
+    If successful, the ```sqlite_open()``` function returns a handle to the file, which is stored in the variable $handle and is used for all subsequent communication with the database.
 
 2. The next step is to create and execute the query, with the ```sqlite_query()``` function.
 
-```php
+    ```php
 <?php
 $query = "SELECT * FROM books";
 $result = sqlite_query($handle, $query) or die("Error in query: " . sqlite_error_string(sqlite_last_error($handle)));
 ?>
 ```
 
-This function also needs two parameters: the database handle and the query string. Depending on whether or not the query was successful, the function returns true or false; in the event of a failure, the ```sqlite_error_string()``` and ```sqlite_last_error()``` functions can be used to display the error that took place.
+    This function also needs two parameters: the database handle and the query string. Depending on whether or not the query was successful, the function returns true or false; in the event of a failure, the ```sqlite_error_string()``` and ```sqlite_last_error()``` functions can be used to display the error that took place.
 
 3. If ```sqlite_query()``` is successful, the result set returned by the query is stored in the variable $result. You can retrieve the records in the result set with the ```sqlite_fetch_array()``` function, which fetches a single row of data as an array called ```$row```. Fields in that record are represented as array elements, and can be accessed using standard index notation.
 
-Each time you call ```sqlite_fetch_array()```, the next record in the result set is returned. This makes ```sqlite_fetch_array()``` very suitable for use in a ```while()``` loop, in much the same way as ```mysql_fetch_row()``` was used earlier.
+    Each time you call ```sqlite_fetch_array()```, the next record in the result set is returned. This makes ```sqlite_fetch_array()``` very suitable for use in a ```while()``` loop, in much the same way as ```mysql_fetch_row()``` was used earlier.
 
-```php
+    ```php
 <?php
 if (sqlite_num_rows($result) > 0) {
     echo "<table cellpadding=10 border=1>";
@@ -159,17 +159,17 @@ if (sqlite_num_rows($result) > 0) {
 ?>
 ```
 
-The number of records returned by the query can be retrieved with the ```sqlite_num_rows()``` function. Or, if what you're really interested in is the number of fields in the result set, use the ```sqlite_num_fields()``` function instead. Of course, these are only applicable with queries that actually return records; it doesn't really make sense to use them with ```INSERT```, ```UPDATE``` or ```DELETE``` queries.
+    The number of records returned by the query can be retrieved with the ```sqlite_num_rows()``` function. Or, if what you're really interested in is the number of fields in the result set, use the ```sqlite_num_fields()``` function instead. Of course, these are only applicable with queries that actually return records; it doesn't really make sense to use them with ```INSERT```, ```UPDATE``` or ```DELETE``` queries.
 
 4. Once you're done, it's a good idea to close the database handle and return the used memory to the system, with a call to ```sqlite_close()```:
 
-```php
+    ```php
 <?php
 sqlite_close($handle);
 ?>
 ```
 
-In PHP 5 you can also use the SQLite API in an object-oriented way, wherein each of the functions above becomes a method of the ```SQLiteDatabase()``` object. Take a look at this next listing, which is equivalent to the one above:
+    In PHP 5 you can also use the SQLite API in an object-oriented way, wherein each of the functions above becomes a method of the ```SQLiteDatabase()``` object. Take a look at this next listing, which is equivalent to the one above:
 
 ```php
 <html>
