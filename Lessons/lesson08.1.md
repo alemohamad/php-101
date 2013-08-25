@@ -148,7 +148,7 @@ As you can see, using PHP to get data from a database involves several steps, ea
 
 1. The first thing to do is specify some important information needed to establish a connection to the database server. This information includes the server name, the username and password required to gain access to it, and the name of the database to query. These values are all set up in regular PHP variables.
 
-```php
+    ```php
 <?php
 $host = "localhost";
 $user = "test";
@@ -159,44 +159,44 @@ $db = "testdb";
 
 2. To begin communication with a MySQL database server, you need to open a connection to that server. All communication between PHP and the database server takes place through this connection.
 
-In order to initialize this connection, PHP offers the ```mysql_connect()``` function:
+    In order to initialize this connection, PHP offers the ```mysql_connect()``` function:
 
-```php
+    ```php
 <?php
 $connection = mysql_connect($server, $user, $pass);
 ?>
 ```
 
-All the parameters in ```mysql_connect()``` are optional, but there are three you will generally need to use anywhere beyond your own machine: the database server name, username and password. If the database server and the Web server are running on the same physical machine, you can use ```localhost``` as the database server name this is in fact the default value supplied by PHP.
+    All the parameters in ```mysql_connect()``` are optional, but there are three you will generally need to use anywhere beyond your own machine: the database server name, username and password. If the database server and the Web server are running on the same physical machine, you can use ```localhost``` as the database server name this is in fact the default value supplied by PHP.
 
-```mysql_connect()``` returns a "link identifier", which is stored in the variable ```$connection```. This identifier is used when communicating with the database.
+    ```mysql_connect()``` returns a "link identifier", which is stored in the variable ```$connection```. This identifier is used when communicating with the database.
 
 3. Once you have a connection to the database, you must select a database for use with the ```mysql_select_db()``` function:
 
-```php
+    ```php
 <?php
 mysql_select_db($db) or die ("Unable to select database!");
 ?>
 ```
 
-This function must be passed the name of the database to be used for all subsequent queries. An optional second argument here is the link identifier; if no identifier is specified, the last opened link is assumed. If you have two or more database connections open simultaneously, it's a good idea to specify the link identifier as the second argument to ```mysql_select_db()``` – and indeed to all other mysql_* functions in the script, so that PHP doesn't get confused about which connection to use where.
+    This function must be passed the name of the database to be used for all subsequent queries. An optional second argument here is the link identifier; if no identifier is specified, the last opened link is assumed. If you have two or more database connections open simultaneously, it's a good idea to specify the link identifier as the second argument to ```mysql_select_db()``` – and indeed to all other mysql_* functions in the script, so that PHP doesn't get confused about which connection to use where.
 
 4. The next step is to create the query and execute it. This is accomplished with the ```mysql_query()``` function.
 
-```php
+    ```php
 <?php
 $query = "SELECT * FROM symbols";
 $result = mysql_query($query) or die ("Error in query: $query. " . mysql_error());
 ?>
 ```
 
-This function also needs two parameters: the query string and the link identifier for the connection. Again, if no link identifier is specified, the last opened link is used. Depending on whether or not the query was successful, the function returns true or false; a failure can be caught via the ```...or die()``` clause of the statement, and the ```mysql_error()``` function can be used to display the corresponding error message.
+    This function also needs two parameters: the query string and the link identifier for the connection. Again, if no link identifier is specified, the last opened link is used. Depending on whether or not the query was successful, the function returns true or false; a failure can be caught via the ```...or die()``` clause of the statement, and the ```mysql_error()``` function can be used to display the corresponding error message.
 
 5. If ```mysql_query()``` is successful, the result set returned by the query is stored in the variable ```$result```. This result set may contain one or more rows or columns of data, depending on your query. You can retrieve specific subsets of the result set with different PHP functions, including the one used here – the ```mysql_fetch_row()``` function - which fetches a single row of data as an array called ```$row```. Fields in that row can then be accessed using standard PHP array notation.
 
-Each time you call ```mysql_fetch_row()```, the next record in the result set is returned. This makes ```mysql_fetch_row()``` very suitable for use in a ```while()``` or ```for()``` loop.
+    Each time you call ```mysql_fetch_row()```, the next record in the result set is returned. This makes ```mysql_fetch_row()``` very suitable for use in a ```while()``` or ```for()``` loop.
 
-```php
+    ```php
 <?php
 if (mysql_num_rows($result) > 0) {
     while($row = mysql_fetch_row($result)) {
@@ -208,13 +208,13 @@ if (mysql_num_rows($result) > 0) {
 ?>
 ```
 
-Notice that the call to ```mysql_fetch_row()``` is wrapped in a conditional test, which first checks to see if any rows were returned at all. This information is provided by the ```mysql_num_rows()``` function, which contains the number of rows returned by the query. Obviously, you can only use this function with queries that return data, like ```SELECT``` or ```SHOW```. It is not appropriate for use with ```INSERT```, ```UPDATE```, ```DELETE``` or similar queries.
+    Notice that the call to ```mysql_fetch_row()``` is wrapped in a conditional test, which first checks to see if any rows were returned at all. This information is provided by the ```mysql_num_rows()``` function, which contains the number of rows returned by the query. Obviously, you can only use this function with queries that return data, like ```SELECT``` or ```SHOW```. It is not appropriate for use with ```INSERT```, ```UPDATE```, ```DELETE``` or similar queries.
 
-There are several other alternatives to ```mysql_fetch_row()```, which will be explained a little later.
+    There are several other alternatives to ```mysql_fetch_row()```, which will be explained a little later.
 
 6. Finally, since each result set returned after a query occupies memory, it's a good idea to use the ```mysql_free_result()``` function to free up the used memory. After the result set is freed, if no further queries are to be run, you can close the connection to the MySQL server ```with mysql_close()```.
 
-```php
+    ```php
 <?php
 mysql_free_result($result);
 mysql_close($connection);

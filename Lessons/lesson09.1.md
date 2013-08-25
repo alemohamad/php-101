@@ -169,7 +169,7 @@ sqlite_close($handle);
 ?>
 ```
 
-    In PHP 5 you can also use the SQLite API in an object-oriented way, wherein each of the functions above becomes a method of the ```SQLiteDatabase()``` object. Take a look at this next listing, which is equivalent to the one above:
+In PHP 5 you can also use the SQLite API in an object-oriented way, wherein each of the functions above becomes a method of the ```SQLiteDatabase()``` object. Take a look at this next listing, which is equivalent to the one above:
 
 ```php
 <html>
